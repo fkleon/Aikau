@@ -234,6 +234,28 @@ model.jsonModel = {
                         }
                      ]
                   }
+               },
+               {
+                  id: "UNSCOPED",
+                  name: "alfresco/forms/controls/MultiSelectInput",
+                  config: {
+                     label: "Tags",
+                     name: "tags",
+                     description: "Unscoped request for tags",
+                     width: "400px",
+                     optionsConfig: {
+                        queryAttribute: "name",
+                        valueAttribute: "nodeRef",
+                        labelAttribute: "name",
+                        publishTopic: "ALF_RETRIEVE_CURRENT_TAGS",
+                        publishPayload: {
+                           resultsProperty: "response.data.items"
+                        }
+                     },
+                     requirementConfig: {
+                        initialValue: true
+                     }
+                  }
                }
             ]
          }
